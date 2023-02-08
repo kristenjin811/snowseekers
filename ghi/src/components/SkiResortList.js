@@ -6,7 +6,6 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 
 
-
 const getDataFromLS = () => {
   const data = localStorage.getItem('skiResorts')
   if (data) {
@@ -15,6 +14,7 @@ const getDataFromLS = () => {
     return []
   }
 }
+
 
 function SkiResortList() {
   const [skiResorts, setSkiResorts] = useState(getDataFromLS());
@@ -30,8 +30,8 @@ function SkiResortList() {
   const currentPageResorts = getCurrentPage(skiResorts, currentPage, itemsPerPage);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [currentPage]);
+    window.scrollTo(0, 0)
+  }, [currentPage])
 
   useEffect(() => {
     localStorage.setItem('skiResorts', JSON.stringify(skiResorts))
@@ -41,6 +41,23 @@ function SkiResortList() {
   const removeSkiResort = index => {
     setSkiResorts(skiResorts.filter((_, i) => i !== index))
   }
+
+  const [photos, setPhotos] = useState('')
+  // Unsplash API
+  useEffect(() => {
+    const fetchPhotos = async () => {
+      const promises = skiResorts.map(async skiResort => {
+        const response = await fetch(
+          `https://api.unsplash.com/search/photos?query=${skiResort.name}+ski+resort&client_id=BXYQ-Vc7oqDaTe_6GtsrHdN_gC_FtJAZZyC7ngPeRaA`
+        )
+        const data = await response.json()
+        return data.results[0].urls.small
+      })
+      const results = await Promise.all(promises)
+      setPhotos(results)
+    }
+    fetchPhotos()
+  }, [skiResorts])
 
 
   return (
@@ -57,13 +74,13 @@ function SkiResortList() {
       <h4>{skiResorts.length} results found:</h4>
 
       <div className="container">
-        <CardGroup style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <CardGroup >
           {currentPageResorts.length ? (
             currentPageResorts.map((skiResort, index) => (
-            <Card key={skiResort.name} style={{ width: '18rem', flex: '1 0 33%' }}>
+              <Card className="card-with-border" key={skiResort.name} style={{ width: '33.33%', flex: '1 0 33.33%', border: 'none'}}>
               <Card.Body>
-                <Card.Img variant="top" src="https://www.macmillandictionary.com/external/slideshow/thumb/Grey_thumb.png" />
-                <Card.Title>{skiResort.name}</Card.Title>
+              <Card.Img variant="top" src={photos[index]} />
+                <Card.Title>{skiResort.name.toUpperCase()}</Card.Title>
                 <Card.Subtitle>{skiResort.location}</Card.Subtitle>
                 <Card.Text>{skiResort.skiRuns} ski runs</Card.Text>
 
@@ -76,7 +93,7 @@ function SkiResortList() {
             ))
             ) : (
               <p className="empty-list-text">No ski resorts are added yet.</p>
-          )}
+              )}
         </CardGroup>
       </div>
 

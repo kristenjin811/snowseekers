@@ -239,3 +239,7 @@ button {
 .pagination {
   margin-top: 40px;
 }
+
+.card-with-border {
+  border: none;
+}
