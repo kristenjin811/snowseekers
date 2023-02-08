@@ -6,7 +6,6 @@ import Nav from './components/Nav'
 import Footer from './components/Footer'
 import MainPage from './components/MainPage'
 import React from 'react'
-import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import ReactDOM from 'react-dom'
-import { Link, Navigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import {Card, CardGroup, Button, ButtonGroup} from 'react-bootstrap'
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -44,10 +43,7 @@ function SkiResortList() {
 
   // Unsplash API
   const [photos, setPhotos] = useState('')
-  const API_KEY = process.env.REACT_APP_UNSPLASH_API_KEY || 'your_api_key'
-  console.log(API_KEY)
-
-
+  const API_KEY = process.env.REACT_APP_UNSPLASH_API_KEY
 
   useEffect(() => {
     const fetchPhotos = async () => {
@@ -62,7 +58,7 @@ function SkiResortList() {
       setPhotos(results)
     }
     fetchPhotos()
-  }, [skiResorts])
+  }, [skiResorts, API_KEY])
 
 
   return (

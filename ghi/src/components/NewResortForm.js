@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import ReactDOM from 'react-dom'
-import { Link, Navigate } from "react-router-dom"
-import Alert from 'react-bootstrap/Alert';
+import { Navigate } from "react-router-dom"
 import states from './USStates'
 
 
