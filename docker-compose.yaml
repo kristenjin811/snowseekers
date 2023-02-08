@@ -3,6 +3,9 @@ volumes:
     external: true
 
 services:
+  environment:
+    REACT_APP_UNSPLASH_API_KEY: ${REACT_APP_UNSPLASH_API_KEY}
+    
   backend:
     build:
       context: backend

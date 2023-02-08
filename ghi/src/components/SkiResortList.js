@@ -42,13 +42,18 @@ function SkiResortList() {
     setSkiResorts(skiResorts.filter((_, i) => i !== index))
   }
 
-  const [photos, setPhotos] = useState('')
   // Unsplash API
+  const [photos, setPhotos] = useState('')
+  const API_KEY = process.env.REACT_APP_UNSPLASH_API_KEY || 'your_api_key'
+  console.log(API_KEY)
+
+
+
   useEffect(() => {
     const fetchPhotos = async () => {
       const promises = skiResorts.map(async skiResort => {
         const response = await fetch(
-          `https://api.unsplash.com/search/photos?query=${skiResort.name}+ski+resort&client_id=BXYQ-Vc7oqDaTe_6GtsrHdN_gC_FtJAZZyC7ngPeRaA`
+          `https://api.unsplash.com/search/photos?query=${skiResort.name}+ski+resort&client_id=${API_KEY}`
         )
         const data = await response.json()
         return data.results[0].urls.small
