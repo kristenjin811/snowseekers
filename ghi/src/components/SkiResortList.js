@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
-import {Card, CardGroup, Container, Col, Row, Button, ButtonGroup} from 'react-bootstrap'
+import {Card, CardGroup, Button, ButtonGroup} from 'react-bootstrap'
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 
@@ -49,7 +49,7 @@ function SkiResortList() {
     const fetchPhotos = async () => {
       const promises = skiResorts.map(async skiResort => {
         const response = await fetch(
-          `https://api.unsplash.com/search/photos?query=${skiResort.name}+ski+resort&client_id=${API_KEY}`
+          `https://cors-anywhere.herokuapp.com/https://api.unsplash.com/search/photos?query=${skiResort.name}+ski+resort&client_id=${API_KEY}`
         )
         const data = await response.json()
         return data.results[0].urls.small
