@@ -50,27 +50,25 @@ function SkiResortList() {
       }
   });
 
-
-
   const [photos, setPhotos] = useState('')
   const API_KEY = process.env.REACT_APP_UNSPLASH_API_KEY
-  console.log(API_KEY)
+
   useEffect(() => {
     const fetchPhotos = async () => {
       const promises = skiResorts.map(async skiResort => {
         try {
-        const response = await instance.get(
-          `search/photos?query=${skiResort.name}+ski+resort&client_id=${API_KEY}`)
-        return response.data.results[0].urls.small
-        } catch (error) {
-          console.error(error)
-        }
+          const response = await instance.get(
+            `search/photos?query=${skiResort.name}+ski+resort&client_id=${API_KEY}`)
+            return response.data.results[0].urls.small
+          } catch (error) {
+            console.error(error)
+          }
       })
       const results = await Promise.all(promises)
       setPhotos(results)
     }
     fetchPhotos()
-  }, [skiResorts, API_KEY])
+  }, [skiResorts, API_KEY, instance]) // noqa
 
 
   return (
@@ -96,11 +94,14 @@ function SkiResortList() {
                 <Card.Title>{skiResort.name.toUpperCase()}</Card.Title>
                 <Card.Subtitle>{skiResort.location}</Card.Subtitle>
                 <Card.Text>{skiResort.skiRuns} ski runs</Card.Text>
+                <Card.Link href="#" className='image-gallery'>Images</Card.Link>
 
-                <DropdownButton size="sm" variant="secondary" as={ButtonGroup} title="Edit" id="bg-nested-dropdown">
-                  <Dropdown.Item eventKey="1" as={Link} to={`/edit/${index}`}>Edit</Dropdown.Item>
-                  <Dropdown.Item eventKey="2" onClick={() => removeSkiResort(index)}>Delete</Dropdown.Item>
-                </DropdownButton>
+                <div className='dropdown-edit-button'>
+                  <DropdownButton size="sm" variant="secondary" as={ButtonGroup} title="Edit" id="bg-nested-dropdown">
+                    <Dropdown.Item eventKey="1" as={Link} to={`/edit/${index}`}>Edit</Dropdown.Item>
+                    <Dropdown.Item eventKey="2" onClick={() => removeSkiResort(index)}>Delete</Dropdown.Item>
+                  </DropdownButton>
+                </div>
               </Card.Body>
             </Card>
             ))
