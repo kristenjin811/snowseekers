@@ -8,7 +8,7 @@ const EditSkiResort = () => {
   const [skiResorts, setSkiResorts] = useState(getDataFromLS());
   const { index } = useParams()
   console.log(index)
-  const [skiResort, setSkiResort] = useState({ name: '', location: '', skiRuns: '' })
+  const [skiResort, setSkiResort] = useState({ name: 'Dummy Resort', location: 'Alaska', skiRuns: '10' })
   const [isEdited, setIsEdited] = useState(false)
 
   useEffect(() => {

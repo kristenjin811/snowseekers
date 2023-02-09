@@ -76,7 +76,7 @@ function NewResortForm() {
 
         <div>
           <label htmlFor="location">Location:</label>
-          <select name="location" value={location} onChange={(e)=>setLocation(e.target.value)} className="form-control" required>
+          <select name="location" value={location} onChange={(e)=>setLocation(e.target.value)} className="form-control" id="location" required>
             {states.map(state => (
               <option htmlFor="location" key={state.value} value={state.value}>
                 {state.label}

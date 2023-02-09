@@ -10,7 +10,7 @@ function Footer() {
           <div className="row">
             <div className="col-sm-12 col-md-6">
               <h6>About</h6>
-              <p className="text-justify">SnowSeeker  is an innovative solution for managing ski resorts. With a user-friendly interface, it allows users to easily view and interact with a list of ski resorts, including key information such as location and number of ski runs. Additionally, the program provides options for editing and deleting ski resorts, giving users complete control over their ski resort data. The program has been designed with efficiency in mind, providing a fast and seamless experience for users. Whether you're a ski enthusiast, a resort manager, or just looking for a convenient way to keep track of your favorite ski destinations, this program has you covered.</p>
+              <p className="text-justify">SnowSeeker is an innovative solution for managing ski resorts. With a user-friendly interface, it allows users to easily view and interact with a list of ski resorts, including key information such as location and number of ski runs. Additionally, the program provides options for editing and deleting ski resorts, giving users complete control over their ski resort data. The program has been designed with efficiency in mind, providing a fast and seamless experience for users. Whether you're a ski enthusiast, a resort manager, or just looking for a convenient way to keep track of your favorite ski destinations, this program has you covered.</p>
             </div>
 
             <div className="col-xs-6 col-md-3">

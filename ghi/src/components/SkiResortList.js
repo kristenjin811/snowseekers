@@ -72,7 +72,7 @@ function SkiResortList() {
           </p>
         </div>
       </div>
-      <h4>{skiResorts.length} results found:</h4>
+      <h4 data-testid="number-of-ski-resorts">{skiResorts.length} results found:</h4>
 
       <div className="card-container" >
         <CardGroup>
@@ -93,7 +93,7 @@ function SkiResortList() {
             </Card>
             ))
             ) : (
-              <p className="empty-list-text">No ski resorts are added yet.</p>
+              <p className="empty-list-text">There's nothing on this page. Please go to the previous page.</p>
               )}
         </CardGroup>
       </div>

@@ -1,6 +1,5 @@
 {
   "homepage": "https://kristenjin811.gitlab.io/snowseekers",
-
   "name": "ghi",
   "version": "0.1.0",
   "private": true,
@@ -14,6 +13,7 @@
     "react-paginate": "^8.1.4",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
+    "react-test-renderer": "^18.2.0",
     "states-us": "^1.0.2",
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
