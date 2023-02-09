@@ -20,14 +20,26 @@ h1 {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
+.main {
+  margin-top: -50px;
+  font-size: 70px;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  overflow: hidden;
+}
+
 h4 {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: 20px;
   margin-bottom: 30px;
-}
-
-.container {
-  margin-top: 50px;
 }
 
 div.form {
@@ -44,7 +56,6 @@ div.form {
 button {
   margin: 0 auto;
 }
-
 
 .site-footer
 {
@@ -122,15 +133,13 @@ button {
 {
   margin:0
 }
-@media (max-width:991px)
-{
+@media {
   .site-footer [class^=col-]
   {
     margin-bottom:30px
   }
 }
-@media (max-width:767px)
-{
+@media {
   .site-footer
   {
     padding-bottom:0
@@ -202,8 +211,7 @@ button {
 {
   background-color:#ea4c89
 }
-@media (max-width:767px)
-{
+@media {
   .social-icons li.title
   {
     display:block;

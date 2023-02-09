@@ -8,12 +8,6 @@ class MainPage extends React.Component {
   render () {
     const myStyle={
       backgroundImage: "url('https://wallpaperaccess.com/full/133728.jpg')",
-      height:'100vh',
-      marginTop:'-50px',
-      fontSize:'70px',
-      color: "white",
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat',
     }
     return (
       <>
