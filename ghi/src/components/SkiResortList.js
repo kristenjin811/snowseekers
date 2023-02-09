@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import {Card, CardGroup, Button, ButtonGroup} from 'react-bootstrap'
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
+import axios from 'axios';
 
 
 const getDataFromLS = () => {
@@ -42,17 +43,28 @@ function SkiResortList() {
   }
 
   // Unsplash API
+  const instance = axios.create({
+    baseURL: 'https://api.unsplash.com/',
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      }
+  });
+
+
+
   const [photos, setPhotos] = useState('')
   const API_KEY = process.env.REACT_APP_UNSPLASH_API_KEY
   console.log(API_KEY)
   useEffect(() => {
     const fetchPhotos = async () => {
       const promises = skiResorts.map(async skiResort => {
-        const response = await fetch(
-          `https://cors-anywhere.herokuapp.com/https://api.unsplash.com/search/photos?query=${skiResort.name}+ski+resort&client_id=${API_KEY}`
-        )
-        const data = await response.json()
-        return data.results[0].urls.small
+        try {
+        const response = await instance.get(
+          `search/photos?query=${skiResort.name}+ski+resort&client_id=${API_KEY}`)
+        return response.data.results[0].urls.small
+        } catch (error) {
+          console.error(error)
+        }
       })
       const results = await Promise.all(promises)
       setPhotos(results)
