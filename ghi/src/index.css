@@ -243,3 +243,13 @@ button {
 .card-with-border {
   border: none;
 }
+
+.navbar-brand {
+  font-size: 22px;
+}
+
+.btn-group {
+  margin-top: 8px;
+  margin-bottom: 7px;
+  font-size: 18px;
+}
