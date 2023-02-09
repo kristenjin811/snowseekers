@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react'
 import Webcam from 'react-webcam'
-import {Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 const WebcamCapture = ({setSkiResort}) => {
@@ -12,9 +11,6 @@ const WebcamCapture = ({setSkiResort}) => {
     const imageSrc = webcamRef.current.getScreenshot()
     setWebcamImage(imageSrc)
     setSkiResort((prevState) => ({ ...prevState, image: imageSrc }))
-    setShowWebcam(false)
-  }
-  const cancel = () => {
     setShowWebcam(false)
   }
 

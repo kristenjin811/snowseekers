@@ -17,8 +17,6 @@ const getDataFromLS = () => {
 
 function SkiResortList() {
   const [skiResorts, setSkiResorts] = useState(getDataFromLS());
-  const [skiResort, setSkiResort] = useState({ name: '', location: '', skiRuns: 0, image: '' });
-
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
 
