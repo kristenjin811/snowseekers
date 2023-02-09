@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
-import {Card, CardGroup, Button, ButtonGroup} from 'react-bootstrap'
+import {Card, CardGroup, Container, Col, Row, Button, ButtonGroup} from 'react-bootstrap'
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 
@@ -44,7 +44,7 @@ function SkiResortList() {
   // Unsplash API
   const [photos, setPhotos] = useState('')
   const API_KEY = process.env.REACT_APP_UNSPLASH_API_KEY
-
+  console.log(API_KEY)
   useEffect(() => {
     const fetchPhotos = async () => {
       const promises = skiResorts.map(async skiResort => {
@@ -74,13 +74,13 @@ function SkiResortList() {
       </div>
       <h4>{skiResorts.length} results found:</h4>
 
-      <div className="container">
-        <CardGroup >
+      <div className="card-container" >
+        <CardGroup>
           {currentPageResorts.length ? (
             currentPageResorts.map((skiResort, index) => (
               <Card className="card-with-border" key={skiResort.name} style={{ width: '33.33%', flex: '1 0 33.33%', border: 'none'}}>
               <Card.Body>
-              <Card.Img variant="top" src={photos[index]} />
+              <Card.Img variant="top" src={photos[index]}/>
                 <Card.Title>{skiResort.name.toUpperCase()}</Card.Title>
                 <Card.Subtitle>{skiResort.location}</Card.Subtitle>
                 <Card.Text>{skiResort.skiRuns} ski runs</Card.Text>

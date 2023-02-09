@@ -9,13 +9,8 @@ build-front-end-job:
   image: node:lts-bullseye
 
   variables:
-    # If either of these variables is defined in the GitLab
-    # CI/CD variables, that value will override the value here.
-    # You need to substitute in your real values for
-    # GROUP_NAME, PROJECT_NAME, & WEBSERVICE_NAME below.
     PUBLIC_URL: https://kristenjin811.gitlab.io/snowseekers/
     REACT_APP_UNSPLASH_API_KEY: ${REACT_APP_UNSPLASH_API_KEY}
-
 
   script:
     - cd ghi
@@ -25,6 +20,7 @@ build-front-end-job:
   artifacts:
     paths:
       - ghi/build/
+
 
 # Deploy the React/JavaScript front-end to GitLab pages
 pages:
