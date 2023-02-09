@@ -58,11 +58,11 @@ function NewResortForm() {
   return (
     <>
       <div className="px-4 py-5 my-5 mt-0 text-center">
-        <h1 className="display-5 fw-bold">Ski Resorts</h1>
+        <h1 className="display-5 fw-bold">Add a new ski resort to your list</h1>
         <br></br>
         <div className="col-lg-6 mx-auto">
           <p className="lead mb-4">
-            Add a new ski resort to the list
+              Here, you can add new ski resorts to your list, view ski runs information about each one, and even keep track of the resorts you've already visited. So grab your skis, pack your bags, and get ready to check off some incredible ski resorts from your bucket list!
           </p>
         </div>
       </div>

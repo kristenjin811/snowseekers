@@ -10,7 +10,7 @@ function Footer() {
           <div className="row">
             <div className="col-sm-12 col-md-6">
               <h6>About</h6>
-              <p className="text-justify">SnowSeeker is an innovative solution for managing ski resorts. With a user-friendly interface, it allows users to easily view and interact with a list of ski resorts, including key information such as location and number of ski runs. Additionally, the program provides options for editing and deleting ski resorts, giving users complete control over their ski resort data. The program has been designed with efficiency in mind, providing a fast and seamless experience for users. Whether you're a ski enthusiast, a resort manager, or just looking for a convenient way to keep track of your favorite ski destinations, this program has you covered.</p>
+              <p className="text-justify">SnowSeekers is dedicated to helping you plan and keep track of all the amazing ski resorts you want to visit. Whether you're a seasoned skier or a beginner, there's always a new mountain to explore and new trails to conquer. With our easy-to-use interface, you can add new ski resorts to your list, view detailed information about each one, and even keep track of the resorts you've already visited. So grab your skis, pack your bags, and get ready to check off some incredible ski resorts from your bucket list!</p>
             </div>
 
             <div className="col-xs-6 col-md-3">
@@ -30,7 +30,6 @@ function Footer() {
                 <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
                 <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
                 <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
-                <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
               </ul>
             </div>
           </div>
@@ -38,7 +37,7 @@ function Footer() {
         <div className="container">
           <div className="row">
             <div className="col-md-8 col-sm-6 col-xs-12">
-              <p className="copyright-text">Copyright &copy; 2017 All Rights Reserved by SnowSeeker.
+              <p className="copyright-text">Copyright &copy; 2017 All Rights Reserved by SnowSeekers.
               </p>
             </div>
 

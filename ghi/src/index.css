@@ -265,4 +265,13 @@ button {
   font-size: 18px;
 }
 
+.webcam-capture-button {
+  position: flex;
+  align-items: center;
+  margin-left: 30%;
+}
 
+/* .edit-drop {
+  bottom:-31px;
+  opacity: 0.5;
+} */

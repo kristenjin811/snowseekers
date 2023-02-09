@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams, Navigate } from 'react-router-dom'
 import states from './USStates'
+import WebcamCapture from './WebcamCapture';
 
 
 
@@ -80,11 +81,13 @@ const EditSkiResort = () => {
           <label htmlFor="skiRuns">Number of ski runs:</label>
           <input type="number" min="0" onChange={handleChange} value={skiResort.skiRuns} className="form-control" name="skiRuns" id="skiRuns" required/>
         </div>
+        <WebcamCapture setSkiResort={setSkiResort} />
 
         <div className="d-flex justify-content-center">
           <button type="submit" className="btn btn-dark edit-resort-button">Save</button>
           <br></br>
         </div>
+
       </form>
       <div className="text-center mt-3">
         <Link to="/all" className="btn btn-link cancel-link" style={{color: 'black'}}>Cancel Editing</Link>

@@ -17,7 +17,7 @@ describe('skiResortList', () => {
 
   it('should render the empty list text when there are no ski resorts', () => {
     render(<BrowserRouter><SkiResortList /></BrowserRouter>);
-    const emptyListText = screen.getByText("There's nothing on this page. Please go to the previous page.");
+    const emptyListText = screen.getByText("There's nothing on this page.");
     expect(emptyListText).toBeInTheDocument();
   });
 
@@ -43,6 +43,6 @@ test('deletes a ski resort', () => {
   expect(getByTestId('number-of-ski-resorts').textContent).toBe('2 results found:');
   expect(localStorage.setItem).toHaveBeenCalledWith('skiResorts', JSON.stringify([
     { name: 'Vail', location: 'Colorado', skiRuns: 193 },
-    { name: 'Whistler Blackcomb', location: 'British Columbia', skiRuns: 8,171 }
+    { name: 'Whistler Blackcomb', location: 'British Columbia', skiRuns: 8171 }
   ]));
 });

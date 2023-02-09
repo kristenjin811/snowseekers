@@ -5,7 +5,6 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import axios from 'axios';
 
-
 const getDataFromLS = () => {
   const data = localStorage.getItem('skiResorts')
   if (data) {
@@ -18,6 +17,7 @@ const getDataFromLS = () => {
 
 function SkiResortList() {
   const [skiResorts, setSkiResorts] = useState(getDataFromLS());
+  const [skiResort, setSkiResort] = useState({ name: '', location: '', skiRuns: 0, image: '' });
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
@@ -74,11 +74,11 @@ function SkiResortList() {
   return (
     <>
       <div className="px-4 py-5 my-5 mt-0 text-center">
-        <h1 className="display-5 fw-bold">Ski Resorts</h1>
+        <h1 className="display-5 fw-bold">Ski Resort Bucket List</h1>
         <br></br>
         <div className="col-lg-6 mx-auto">
           <p className="lead mb-4">
-            Explore winter's wonderland
+            Explore your winter's wonderland
           </p>
         </div>
       </div>
@@ -88,25 +88,24 @@ function SkiResortList() {
         <CardGroup>
           {currentPageResorts.length ? (
             currentPageResorts.map((skiResort, index) => (
+              <>
+
               <Card className="card-with-border" key={skiResort.name} style={{ width: '33.33%', flex: '1 0 33.33%', border: 'none'}}>
               <Card.Body>
-              <Card.Img variant="top" src={photos[index]}/>
+              <Card.Img variant="top" src={skiResort.image ? skiResort.image: photos[index]}/>
                 <Card.Title>{skiResort.name.toUpperCase()}</Card.Title>
                 <Card.Subtitle>{skiResort.location}</Card.Subtitle>
                 <Card.Text>{skiResort.skiRuns} ski runs</Card.Text>
-                <Card.Link href="#" className='image-gallery'>Images</Card.Link>
-
-                <div className='dropdown-edit-button'>
-                  <DropdownButton size="sm" variant="secondary" as={ButtonGroup} title="Edit" id="bg-nested-dropdown">
-                    <Dropdown.Item eventKey="1" as={Link} to={`/edit/${index}`}>Edit</Dropdown.Item>
-                    <Dropdown.Item eventKey="2" onClick={() => removeSkiResort(index)}>Delete</Dropdown.Item>
-                  </DropdownButton>
-                </div>
+                <DropdownButton className="edit-drop" size="sm" variant="light" as={ButtonGroup} title="More" id="bg-nested-dropdown">
+                  <Dropdown.Item eventKey="1" as={Link} to={`/edit/${index}`}>Edit resort</Dropdown.Item>
+                  <Dropdown.Item eventKey="2" onClick={() => removeSkiResort(index)}>Delete resort</Dropdown.Item>
+                </DropdownButton>
               </Card.Body>
             </Card>
+            </>
             ))
             ) : (
-              <p className="empty-list-text">There's nothing on this page. Please go to the previous page.</p>
+              <p className="empty-list-text">There's nothing on this page.</p>
               )}
         </CardGroup>
       </div>
