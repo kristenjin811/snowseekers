@@ -30,10 +30,10 @@ function SkiResortList() {
     window.scrollTo(0, 0)
   }, [currentPage])
 
-  // for EditSkiResort, updates the skiResorts in local storage whenever skiResorts changes
-  // useEffect(() => {
-  //   localStorage.setItem('skiResorts', JSON.stringify(skiResorts))
-  // }, [skiResorts])
+  // updates the skiResorts in local storage whenever skiResorts changes
+  useEffect(() => {
+    localStorage.setItem('skiResorts', JSON.stringify(skiResorts))
+  }, [skiResorts])
 
   // delete button works without refreshing the page after each deletion
   const removeSkiResort = index => {
