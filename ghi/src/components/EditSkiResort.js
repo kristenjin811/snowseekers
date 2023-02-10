@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams, Navigate } from 'react-router-dom'
 import states from './USStates'
-import WebcamCapture from './WebcamCapture';
+import WebcamCapture from './WebcamCapture'
 
 
 
@@ -13,8 +13,8 @@ const EditSkiResort = () => {
   const [isEdited, setIsEdited] = useState(false)
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    window.scrollTo(0, 0)
+  }, [])
 
   useEffect(() => {
     setSkiResort(skiResorts[index])

@@ -23,7 +23,7 @@ https://kristenjin811.gitlab.io/snowseekers
 
 This project is built only on the frontend.
 
-## API
+## External API
 Unsplash API is used to automatically updates the image with a ski resort form submission.
 API key should is store in .env file.
 #### Sample Unsplash API response
@@ -77,6 +77,7 @@ API key should is store in .env file.
 
 ## Webcam Access
 Webcam access is implemented with react-webcam
+
 install react-webcam
 ```npm i react-webcam```
 

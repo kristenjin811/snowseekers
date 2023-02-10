@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
 import {Card, CardGroup, Button, ButtonGroup} from 'react-bootstrap'
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown';
-import axios from 'axios';
+import DropdownButton from 'react-bootstrap/DropdownButton'
+import Dropdown from 'react-bootstrap/Dropdown'
+import axios from 'axios'
+
 
 const getDataFromLS = () => {
   const data = localStorage.getItem('skiResorts')

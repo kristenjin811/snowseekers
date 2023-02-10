@@ -8,7 +8,7 @@ describe('NewResortForm component', () => {
     const { container } = render(<NewResortForm />)
     expect(container).toBeDefined()
   })
-
+  
   it('updates the name state when the input changes', () => {
     const { getByLabelText } = render(<NewResortForm />)
     const nameInput = getByLabelText('Ski resort name:')
