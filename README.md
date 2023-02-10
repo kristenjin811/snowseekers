@@ -23,6 +23,15 @@ https://kristenjin811.gitlab.io/snowseekers
 
 This project is built only on the frontend.
 
+
+## Data structure
+```
+location : "Alaska"
+name : "Dummy Resort"
+skiRuns : "10"
+```
+
+
 ## External API
 Unsplash API is used to automatically updates the image with a ski resort form submission.
 API key should is store in .env file.

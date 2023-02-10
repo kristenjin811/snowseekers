@@ -13,11 +13,14 @@ const WebcamCapture = ({setSkiResort}) => {
     setSkiResort((prevState) => ({ ...prevState, image: imageSrc }))
     setShowWebcam(false)
   }
+  console.log('webcamRef', webcamRef)
+  console.log(webcamImage)
+  console.log(showWebcam)
 
   return (
     <>
       <Link color="inherit" size="sm" style={{color: 'black', decoration: 'underlined'}} onClick={() => setShowWebcam(true)}><i className="fa fa-camera" aria-hidden="true"></i>
-        {webcamImage ? ' Retake photo' : ' Take your own photo'}
+        {webcamImage ? ' Retake photo' : ' Replace image with your own photo'}
         {showWebcam && (
           <Webcam
           audio={false}
@@ -39,7 +42,7 @@ const WebcamCapture = ({setSkiResort}) => {
       {webcamImage ? 'Your chosen photo: ' : ''}
       {webcamImage && <img src={webcamImage} alt="Webcam capture" />}
     </>
-  );
-};
+  )
+}
 
 export default WebcamCapture;

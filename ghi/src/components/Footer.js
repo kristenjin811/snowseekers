@@ -16,9 +16,9 @@ function Footer() {
             <div className="col-xs-6 col-md-3">
               <h6>Categories</h6>
               <ul className="footer-links">
-                <li><a href="http://scanfcode.com/category/c-language/">HomePage</a></li>
-                <li><a href="http://scanfcode.com/category/front-end-development/">Ski Resorts List</a></li>
-                <li><a href="http://scanfcode.com/category/back-end-development/">Add new resort</a></li>
+                <li><a href="https://kristenjin811.gitlab.io/snowseekers/">HomePage</a></li>
+                <li><a href="https://kristenjin811.gitlab.io/snowseekers/all/">Ski Resorts List</a></li>
+                <li><a href="https://kristenjin811.gitlab.io/snowseekers/new/">Add new resort</a></li>
 
               </ul>
             </div>
@@ -26,10 +26,10 @@ function Footer() {
             <div className="col-xs-6 col-md-3">
               <h6>Quick Links</h6>
               <ul className="footer-links">
-                <li><a href="http://scanfcode.com/about/">About Us</a></li>
-                <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
-                <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
-                <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+                <li><a href="https://kristenjin811.gitlab.io/snowseekers/">About Us</a></li>
+                <li><a href="https://kristenjin811.gitlab.io/snowseekers/">Contact Us</a></li>
+                <li><a href="https://kristenjin811.gitlab.io/snowseekers/">Contribute</a></li>
+                <li><a href="https://kristenjin811.gitlab.io/snowseekers//">Privacy Policy</a></li>
               </ul>
             </div>
           </div>
